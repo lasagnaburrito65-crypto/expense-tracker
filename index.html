@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="A simple and beautiful personal expense tracker."
+    >
+
+    <title>Expense Tracker</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="theme-color" content="#F3C6A8">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         APP
+    ====================================================== -->
+
+    <div class="app">
+
+
+        <!-- =================================================
+             HEADER
+        ================================================== -->
+
+        <header class="app-header">
+
+            <div class="header-decor header-decor-left" aria-hidden="true">✦</div>
+            <div class="header-decor header-decor-right" aria-hidden="true">🌸</div>
+
+            <div class="logo">
+
+                <div class="logo-icon">
+                    💰
+                </div>
+
+                <div class="logo-copy">
+
+                    <h1>
+                        Expense Tracker
+                    </h1>
+
+                    <p>
+                        Your little money journal 🌿
+                    </p>
+
+                </div>
+
+            </div>
+
+            <img
+                class="header-mascot"
+                src="expense-mascot.png"
+                alt="Cute anime money mascot"
+            >
+
+        </header>
+
+
+
+        <!-- =================================================
+             MONTH SELECTOR
+        ================================================== -->
+
+        <section class="month-selector">
+
+            <div>
+
+                <span class="section-label">
+                    LOOKING AT
+                </span>
+
+                <p class="month-description">
+                    Choose a month to see your spending.
+                </p>
+
+            </div>
+
+
+            <select id="monthFilter">
+
+                <option value="">
+                    Select month
+                </option>
+
+            </select>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SUMMARY
+        ================================================== -->
+
+        <section class="summary">
+
+
+            <!-- Balance -->
+
+            <div class="card balance-card">
+
+                <span class="card-label">
+                    BALANCE
+                </span>
+
+                <p id="balanceAmount">
+                    ₹0
+                </p>
+
+                <small>
+                    Money left after spending
+                </small>
+
+            </div>
+
+
+            <!-- Received -->
+
+            <div class="card income-card">
+
+                <span class="card-label">
+                    RECEIVED
+                </span>
+
+                <p id="incomeAmount">
+                    ₹0
+                </p>
+
+                <small>
+                    Money coming in
+                </small>
+
+            </div>
+
+
+            <!-- Spent -->
+
+            <div class="card expense-card">
+
+                <span class="card-label">
+                    SPENT
+                </span>
+
+                <p id="expenseAmount">
+                    ₹0
+                </p>
+
+                <small>
+                    Money going out
+                </small>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             NEW TRANSACTION
+        ================================================== -->
+
+        <section class="transaction-form">
+
+
+            <div class="section-heading">
+
+                <h2 id="formTitle">
+                    New Entry
+                </h2>
+
+                <p>
+                    Add something to your little ledger.
+                </p>
+
+            </div>
+
+
+
+            <form id="transactionForm">
+
+
+                <!-- =========================================
+                     SPENT / RECEIVED
+                ========================================== -->
+
+                <div class="form-group transaction-type-group">
+
+                    <label class="form-question">
+                        HOW DID YOUR MONEY MOVE?
+                    </label>
+
+
+                    <div class="transaction-type-toggle">
+
+
+                        <button
+                            type="button"
+                            id="expenseTypeButton"
+                            class="type-button active"
+                        >
+                            ↓ &nbsp; I SPENT
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="incomeTypeButton"
+                            class="type-button"
+                        >
+                            ↑ &nbsp; I RECEIVED
+                        </button>
+
+
+                    </div>
+
+
+                    <input
+                        type="hidden"
+                        id="type"
+                        value="expense"
+                    >
+
+                </div>
+
+
+
+                <!-- =========================================
+                     DESCRIPTION
+                ========================================== -->
+
+                <div class="form-group">
+
+                    <label for="description">
+
+                        WHAT WAS IT FOR?
+
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="description"
+                        placeholder="🍔 e.g. Lunch with friends..."
+                        maxlength="100"
+                        autocomplete="off"
+                    >
+
+
+                    <small class="input-hint">
+
+                        A short note helps you remember it later.
+
+                    </small>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     AMOUNT
+                ========================================== -->
+
+                <div class="form-group">
+
+                    <label for="amount">
+
+                        HOW MUCH?
+
+                    </label>
+
+
+                    <div class="amount-input-wrapper">
+
+
+                        <span
+                            class="currency-symbol"
+                            aria-hidden="true"
+                        >
+                            ₹
+                        </span>
+
+
+                        <input
+                            type="number"
+                            id="amount"
+                            placeholder="0"
+                            min="0.01"
+                            step="0.01"
+                            inputmode="decimal"
+                        >
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     CATEGORY
+                ========================================== -->
+
+                <div class="form-group category-picker-group">
+
+                    <label class="form-question">
+
+                        CATEGORY
+
+                    </label>
+
+
+                    <div
+                        id="categoryPicker"
+                        class="category-picker"
+                        role="group"
+                        aria-label="Choose a category"
+                    >
+
+
+                        <button
+                            type="button"
+                            class="category-option active"
+                            data-category="food"
+                        >
+
+                            <span class="category-option-icon">
+                                🍔
+                            </span>
+
+                            <span>
+                                Food
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="category-option"
+                            data-category="transport"
+                        >
+
+                            <span class="category-option-icon">
+                                🚗
+                            </span>
+
+                            <span>
+                                Transport
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="category-option"
+                            data-category="shopping"
+                        >
+
+                            <span class="category-option-icon">
+                                🛍️
+                            </span>
+
+                            <span>
+                                Shopping
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="category-option"
+                            data-category="bills"
+                        >
+
+                            <span class="category-option-icon">
+                                📄
+                            </span>
+
+                            <span>
+                                Bills
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="category-option"
+                            data-category="entertainment"
+                        >
+
+                            <span class="category-option-icon">
+                                🎮
+                            </span>
+
+                            <span>
+                                Fun
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="category-option"
+                            data-category="education"
+                        >
+
+                            <span class="category-option-icon">
+                                📚
+                            </span>
+
+                            <span>
+                                Education
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="category-option"
+                            data-category="health"
+                        >
+
+                            <span class="category-option-icon">
+                                ❤️
+                            </span>
+
+                            <span>
+                                Health
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="category-option"
+                            data-category="other"
+                        >
+
+                            <span class="category-option-icon">
+                                📌
+                            </span>
+
+                            <span>
+                                Other
+                            </span>
+
+                        </button>
+
+
+                    </div>
+
+
+                    <!-- Hidden value used by JavaScript -->
+
+                    <input
+                        type="hidden"
+                        id="category"
+                        value="food"
+                    >
+
+                </div>
+
+
+
+                <!-- =========================================
+                     DATE
+                ========================================== -->
+
+                <div class="form-group">
+
+                    <label for="date">
+
+                        WHEN?
+
+                    </label>
+
+
+                    <input
+                        type="date"
+                        id="date"
+                    >
+
+                </div>
+
+
+
+                <!-- =========================================
+                     FORM BUTTONS
+                ========================================== -->
+
+                <div class="form-buttons">
+
+
+                    <button
+                        type="submit"
+                        id="submitButton"
+                    >
+
+                        🌿 Add to my ledger
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="cancelButton"
+                    >
+
+                        Cancel
+
+                    </button>
+
+
+                </div>
+
+
+            </form>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             BUDGET
+        ================================================== -->
+
+        <section class="budget-section">
+
+
+            <div class="section-heading">
+
+                <h2>
+                    Monthly Budget
+                </h2>
+
+                <p>
+                    Give your money a little boundary. 🌱
+                </p>
+
+            </div>
+
+
+            <div class="budget-input">
+
+                <label for="budgetAmount">
+                    MONTHLY BUDGET
+                </label>
+
+
+                <div class="budget-input-row">
+
+                    <input
+                        type="number"
+                        id="budgetAmount"
+                        placeholder="e.g. 20000"
+                        min="0"
+                        step="1"
+                    >
+
+
+                    <button
+                        type="button"
+                        id="saveBudgetButton"
+                    >
+                        Save budget
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="budget-summary">
+
+
+                <div class="budget-stat">
+
+                    <span>
+                        Budget
+                    </span>
+
+                    <strong id="budgetTotal">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="budget-stat">
+
+                    <span>
+                        Spent
+                    </span>
+
+                    <strong id="budgetSpent">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="budget-stat">
+
+                    <span>
+                        Remaining
+                    </span>
+
+                    <strong id="budgetRemaining">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="budget-progress">
+
+                <div
+                    id="budgetProgressBar"
+                    class="budget-progress-bar"
+                ></div>
+
+            </div>
+
+
+            <p
+                id="budgetMessage"
+                class="budget-message"
+            >
+                🌱 Set a budget and we'll help you keep an eye on it.
+            </p>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             ANALYTICS
+        ================================================== -->
+
+        <section class="analytics">
+
+
+            <div class="section-heading">
+
+                <h2>
+                    Where Your Money Goes
+                </h2>
+
+                <p>
+                    A little picture of your spending habits. 🌸
+                </p>
+
+            </div>
+
+
+            <div id="categoryChart">
+
+                <!-- JavaScript inserts categories here -->
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             INSIGHTS
+        ================================================== -->
+
+        <section class="insights">
+
+
+            <div class="section-heading">
+
+                <h2>
+                    Little Insights
+                </h2>
+
+                <p>
+                    Some helpful things your ledger noticed.
+                </p>
+
+            </div>
+
+
+            <div id="spendingInsights">
+
+                <!-- JavaScript inserts insights here -->
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             MONTHLY COMPARISON
+        ================================================== -->
+
+        <section class="comparison">
+
+
+            <div class="section-heading">
+
+                <h2>
+                    Monthly Comparison
+                </h2>
+
+                <p>
+                    See how this month compares with the last one.
+                </p>
+
+            </div>
+
+
+            <div id="monthlyComparison">
+
+                <!-- JavaScript inserts comparison here -->
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             YOUR LEDGER
+        ================================================== -->
+
+        <section class="transactions">
+
+
+            <div class="section-heading">
+
+                <h2>
+                    Your Ledger
+                </h2>
+
+                <p>
+                    Everything you've recorded so far. 📚
+                </p>
+
+            </div>
+
+
+
+            <!-- Filters -->
+
+            <div class="transaction-controls">
+
+
+                <div class="search-wrapper">
+
+                    <span
+                        class="search-icon"
+                        aria-hidden="true"
+                    >
+                        🔎
+                    </span>
+
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search your ledger..."
+                    >
+
+                </div>
+
+
+                <select id="typeFilter">
+
+                    <option value="all">
+                        All
+                    </option>
+
+                    <option value="expense">
+                        Spent
+                    </option>
+
+                    <option value="income">
+                        Received
+                    </option>
+
+                </select>
+
+
+                <select id="categoryFilter">
+
+                    <option value="all">
+                        All categories
+                    </option>
+
+                    <option value="food">
+                        🍔 Food
+                    </option>
+
+                    <option value="transport">
+                        🚗 Transport
+                    </option>
+
+                    <option value="shopping">
+                        🛍️ Shopping
+                    </option>
+
+                    <option value="bills">
+                        📄 Bills
+                    </option>
+
+                    <option value="entertainment">
+                        🎮 Fun
+                    </option>
+
+                    <option value="education">
+                        📚 Education
+                    </option>
+
+                    <option value="health">
+                        ❤️ Health
+                    </option>
+
+                    <option value="other">
+                        📌 Other
+                    </option>
+
+                </select>
+
+
+                <select id="sortFilter">
+
+                    <option value="newest">
+                        Newest first
+                    </option>
+
+                    <option value="oldest">
+                        Oldest first
+                    </option>
+
+                    <option value="highest">
+                        Highest amount
+                    </option>
+
+                    <option value="lowest">
+                        Lowest amount
+                    </option>
+
+                </select>
+
+
+            </div>
+
+
+
+            <!-- Transactions -->
+
+            <div id="transactionList">
+
+                <!-- JavaScript inserts transactions here -->
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             DATA MANAGEMENT
+        ================================================== -->
+
+        <section class="data-management">
+
+
+            <div class="section-heading">
+
+                <h2>
+                    Your Data
+                </h2>
+
+                <p>
+                    Keep a backup of your little ledger.
+                </p>
+
+            </div>
+
+
+            <div class="data-buttons">
+
+
+                <button
+                    type="button"
+                    id="exportButton"
+                >
+                    📦 Export backup
+                </button>
+
+
+                <button
+                    type="button"
+                    id="importButton"
+                >
+                    📥 Restore backup
+                </button>
+
+
+                <input
+                    type="file"
+                    id="importFile"
+                    accept=".json"
+                    hidden
+                >
+
+
+            </div>
+
+
+            <p class="data-note">
+
+                Your data is stored locally in this browser.
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer class="app-footer">
+
+            Made with 🌿 and a little bit of code.
+
+        </footer>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         NOTIFICATIONS
+    ====================================================== -->
+
+    <div
+        id="notificationContainer"
+        class="notification-container"
+        aria-live="polite"
+    ></div>
+
+
+
+    <!-- =====================================================
+         CONFIRMATION MODAL
+    ====================================================== -->
+
+    <div
+        id="confirmationModal"
+        class="confirmation-modal"
+    >
+
+        <div class="confirmation-box">
+
+
+            <div class="confirmation-icon">
+                🌿
+            </div>
+
+
+            <h2 id="confirmationTitle">
+                Are you sure?
+            </h2>
+
+
+            <p id="confirmationMessage">
+                Please confirm this action.
+            </p>
+
+
+            <div class="confirmation-buttons">
+
+
+                <button
+                    type="button"
+                    id="modalCancelButton"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="button"
+                    id="modalConfirmButton"
+                >
+                    Confirm
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT FILES
+         
+         IMPORTANT:
+         Load helper files BEFORE app.js
+    ====================================================== -->
+
+    <script src="js/storage.js"></script>
+
+<script src="js/calculations.js"></script>
+
+<script src="js/filters.js"></script>
+
+<script src="js/analytics.js"></script>
+
+<script src="js/budget.js"></script>
+
+<script src="js/comparison.js"></script>
+
+<script src="js/data.js"></script>
+
+<script src="js/insights.js"></script>
+
+<script src="js/modal.js"></script>
+
+<script src="js/notifications.js"></script>
+
+<script src="js/transactions.js"></script>
+
+<script src="js/app.js"></script>
+
+
+<script>
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+            navigator.serviceWorker.register("./service-worker.js")
+                .catch(function (error) {
+                    console.error("Service worker registration failed:", error);
+                });
+        });
+    }
+</script>
+
+</body>
+
+</html>

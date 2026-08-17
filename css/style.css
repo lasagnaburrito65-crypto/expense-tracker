@@ -1,0 +1,5947 @@
+/* =========================================================
+   EXPENSE TRACKER — JOURNAL UI
+   Cream / Peach / Hand-drawn inspired theme
+========================================================= */
+
+
+/* =========================================================
+   1. VARIABLES
+========================================================= */
+
+:root {
+
+    --cream:
+        #FFF4DF;
+
+    --cream-dark:
+        #F8E6C8;
+
+    --paper:
+        #FFF9ED;
+
+    --peach:
+        #F6C5A8;
+
+    --peach-light:
+        #FAD9C1;
+
+    --pink:
+        #EFA79A;
+
+    --pink-light:
+        #F8D7CC;
+
+    --brown:
+        #70483C;
+
+    --brown-light:
+        #9A6C5B;
+
+    --brown-pale:
+        #CFA899;
+
+    --sage:
+        #78927D;
+
+    --sage-dark:
+        #526D5A;
+
+    --sage-light:
+        #DDE8DD;
+
+    --gold:
+        #D7A653;
+
+    --red:
+        #B9625A;
+
+    --red-light:
+        #F8DEDA;
+
+    --green:
+        #4F8061;
+
+    --green-light:
+        #DCEBDD;
+
+    --text:
+        #503D35;
+
+    --text-soft:
+        #8A7166;
+
+    --white:
+        #FFFFFF;
+
+}
+
+
+/* =========================================================
+   2. RESET
+========================================================= */
+
+* {
+
+    box-sizing:
+        border-box;
+
+    margin:
+        0;
+
+    padding:
+        0;
+
+}
+
+
+html {
+
+    scroll-behavior:
+        smooth;
+
+}
+
+
+body {
+
+    min-height:
+        100vh;
+
+    font-family:
+        "Trebuchet MS",
+        "Segoe UI",
+        sans-serif;
+
+    color:
+        var(--text);
+
+    line-height:
+        1.5;
+
+    background:
+        var(--peach-light);
+
+}
+
+
+/* =========================================================
+   3. BACKGROUND
+========================================================= */
+
+body {
+
+    background-color:
+        var(--peach-light);
+
+    background-image:
+
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(255,255,255,0.45)
+            0 4px,
+            transparent 5px
+        ),
+
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(255,255,255,0.35)
+            0 3px,
+            transparent 4px
+        ),
+
+        radial-gradient(
+            circle at 25% 80%,
+            rgba(255,255,255,0.3)
+            0 4px,
+            transparent 5px
+        );
+
+    background-size:
+        180px 180px;
+
+}
+
+
+/* =========================================================
+   4. APP
+========================================================= */
+
+.app {
+
+    width:
+        min(
+            calc(100% - 30px),
+            1050px
+        );
+
+    margin:
+        0 auto;
+
+    padding:
+        35px 0 60px;
+
+}
+
+
+/* =========================================================
+   5. HEADER
+========================================================= */
+
+.app-header {
+
+    position:
+        relative;
+
+    text-align:
+        center;
+
+    padding:
+        15px 0 30px;
+
+}
+
+
+.app-header::before {
+
+    content:
+        "🌿";
+
+    position:
+        absolute;
+
+    left:
+        18%;
+
+    top:
+        10px;
+
+    font-size:
+        30px;
+
+    transform:
+        rotate(-20deg);
+
+}
+
+
+.app-header::after {
+
+    content:
+        "✦";
+
+    position:
+        absolute;
+
+    right:
+        19%;
+
+    top:
+        15px;
+
+    color:
+        var(--gold);
+
+    font-size:
+        25px;
+
+}
+
+
+.logo {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        10px;
+
+}
+
+
+.logo-icon {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    width:
+        52px;
+
+    height:
+        52px;
+
+    background:
+        var(--cream);
+
+    border:
+        3px solid var(--brown);
+
+    border-radius:
+        50%;
+
+    font-size:
+        27px;
+
+    box-shadow:
+        3px 4px 0
+        rgba(
+            112,
+            72,
+            60,
+            0.15
+        );
+
+}
+
+
+.logo h1 {
+
+    color:
+        var(--brown);
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        31px;
+
+    line-height:
+        1.1;
+
+}
+
+
+.logo p {
+
+    color:
+        var(--brown-light);
+
+    font-size:
+        13px;
+
+    margin-top:
+        5px;
+
+}
+
+
+/* =========================================================
+   6. SECTIONS
+========================================================= */
+
+section {
+
+    position:
+        relative;
+
+    background:
+        var(--paper);
+
+    border:
+        2px solid var(--brown-pale);
+
+    border-radius:
+        20px;
+
+    padding:
+        25px;
+
+    margin-bottom:
+        22px;
+
+    box-shadow:
+        5px 6px 0
+        rgba(
+            112,
+            72,
+            60,
+            0.12
+        );
+
+}
+
+
+/* =========================================================
+   7. SECTION HEADING
+========================================================= */
+
+.section-heading {
+
+    position:
+        relative;
+
+    margin-bottom:
+        20px;
+
+}
+
+
+.section-heading h2 {
+
+    color:
+        var(--brown);
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        22px;
+
+}
+
+
+.section-heading p {
+
+    color:
+        var(--text-soft);
+
+    font-size:
+        13px;
+
+    margin-top:
+        4px;
+
+}
+
+
+/* =========================================================
+   8. MONTH SELECTOR
+========================================================= */
+
+.month-selector {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    background:
+        var(--cream);
+
+}
+
+
+.section-label {
+
+    display:
+        block;
+
+    color:
+        var(--brown);
+
+    font-weight:
+        bold;
+
+    font-size:
+        13px;
+
+}
+
+
+.month-description {
+
+    color:
+        var(--text-soft);
+
+    font-size:
+        12px;
+
+    margin-top:
+        3px;
+
+}
+
+
+#monthFilter {
+
+    min-width:
+        190px;
+
+    min-height:
+        44px;
+
+    padding:
+        9px 13px;
+
+    background:
+        var(--paper);
+
+    color:
+        var(--brown);
+
+    border:
+        2px solid var(--brown-pale);
+
+    border-radius:
+        12px;
+
+    font-family:
+        inherit;
+
+    cursor:
+        pointer;
+
+}
+
+
+/* =========================================================
+   9. SUMMARY
+========================================================= */
+
+.summary {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        15px;
+
+    background:
+        transparent;
+
+    border:
+        none;
+
+    padding:
+        0;
+
+    box-shadow:
+        none;
+
+}
+
+
+.card {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    min-height:
+        125px;
+
+    padding:
+        20px;
+
+    background:
+        var(--paper);
+
+    border:
+        2px solid var(--brown-pale);
+
+    border-radius:
+        18px;
+
+    box-shadow:
+        4px 5px 0
+        rgba(
+            112,
+            72,
+            60,
+            0.10
+        );
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.card:hover {
+
+    transform:
+        translateY(-5px)
+        rotate(-0.5deg);
+
+    box-shadow:
+        5px 8px 0
+        rgba(
+            112,
+            72,
+            60,
+            0.13
+        );
+
+}
+
+
+.card::after {
+
+    content:
+        "✿";
+
+    position:
+        absolute;
+
+    right:
+        12px;
+
+    bottom:
+        5px;
+
+    color:
+        var(--pink);
+
+    opacity:
+        0.45;
+
+    font-size:
+        25px;
+
+}
+
+
+.card-label {
+
+    color:
+        var(--text-soft);
+
+    font-size:
+        12px;
+
+    font-weight:
+        bold;
+
+}
+
+
+.card p {
+
+    margin-top:
+        7px;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        25px;
+
+    font-weight:
+        bold;
+
+}
+
+
+.card small {
+
+    color:
+        var(--text-soft);
+
+    font-size:
+        11px;
+
+}
+
+
+.balance-card p {
+
+    color:
+        var(--brown);
+
+}
+
+
+.income-card p {
+
+    color:
+        var(--green);
+
+}
+
+
+.expense-card p {
+
+    color:
+        var(--red);
+
+}
+
+
+/* =========================================================
+   10. NEW ENTRY
+========================================================= */
+
+.transaction-form {
+
+    background:
+        var(--cream);
+
+}
+
+
+.transaction-form::before {
+
+    content:
+        "✿";
+
+    position:
+        absolute;
+
+    right:
+        25px;
+
+    top:
+        18px;
+
+    color:
+        var(--pink);
+
+    font-size:
+        30px;
+
+}
+
+
+.transaction-form::after {
+
+    content:
+        "🌿";
+
+    position:
+        absolute;
+
+    left:
+        18px;
+
+    bottom:
+        15px;
+
+    opacity:
+        0.35;
+
+    font-size:
+        28px;
+
+}
+
+
+#transactionForm {
+
+    position:
+        relative;
+
+    z-index:
+        1;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        17px;
+
+}
+
+
+/* =========================================================
+   11. SPENT / RECEIVED
+========================================================= */
+
+.transaction-type-toggle {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        10px;
+
+}
+
+
+.type-button {
+
+    min-height:
+        50px;
+
+    background:
+        var(--paper);
+
+    color:
+        var(--brown);
+
+    border:
+        2px solid var(--brown-pale);
+
+    border-radius:
+        12px;
+
+    font-family:
+        inherit;
+
+    font-size:
+        14px;
+
+    font-weight:
+        bold;
+
+    cursor:
+        pointer;
+
+    transition:
+        all 0.25s ease;
+
+}
+
+
+.type-button:hover {
+
+    transform:
+        translateY(-2px);
+
+    background:
+        var(--cream-dark);
+
+}
+
+
+.type-button.active {
+
+    background:
+        var(--sage-dark);
+
+    color:
+        white;
+
+    border-color:
+        var(--sage-dark);
+
+    box-shadow:
+        3px 4px 0
+        rgba(
+            82,
+            109,
+            90,
+            0.20
+        );
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =========================================================
+   12. FORM GROUP
+========================================================= */
+
+.form-group {
+
+    width:
+        100%;
+
+}
+
+
+.form-group label {
+
+    display:
+        block;
+
+    color:
+        var(--brown);
+
+    font-size:
+        11px;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        1px;
+
+    margin-bottom:
+        7px;
+
+}
+
+
+.form-group input,
+.form-group select {
+
+    width:
+        100%;
+
+    min-height:
+        48px;
+
+    padding:
+        12px 14px;
+
+    background:
+        var(--white);
+
+    color:
+        var(--text);
+
+    border:
+        2px solid var(--brown-pale);
+
+    border-radius:
+        11px;
+
+    font-family:
+        inherit;
+
+    font-size:
+        14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.form-group input::placeholder {
+
+    color:
+        #B59B8E;
+
+}
+
+
+.form-group input:hover,
+.form-group select:hover {
+
+    border-color:
+        var(--brown-light);
+
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+
+    outline:
+        none;
+
+    border-color:
+        var(--sage);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(
+            120,
+            146,
+            125,
+            0.15
+        );
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+/* =========================================================
+   13. AMOUNT
+========================================================= */
+
+.amount-input-wrapper {
+
+    position:
+        relative;
+
+}
+
+
+.currency-symbol {
+
+    position:
+        absolute;
+
+    left:
+        14px;
+
+    top:
+        50%;
+
+    transform:
+        translateY(-50%);
+
+    color:
+        var(--brown);
+
+    font-weight:
+        bold;
+
+}
+
+
+.amount-input-wrapper input {
+
+    padding-left:
+        30px;
+
+}
+
+
+/* =========================================================
+   14. FORM ROW
+========================================================= */
+
+.form-row {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        16px;
+
+}
+
+
+/* =========================================================
+   15. BUTTONS
+========================================================= */
+
+.form-buttons {
+
+    display:
+        flex;
+
+    gap:
+        10px;
+
+}
+
+
+.form-buttons button {
+
+    min-height:
+        48px;
+
+    padding:
+        12px 20px;
+
+    border-radius:
+        12px;
+
+    font-family:
+        inherit;
+
+    font-size:
+        14px;
+
+    font-weight:
+        bold;
+
+    cursor:
+        pointer;
+
+    transition:
+        all 0.25s ease;
+
+}
+
+
+#submitButton {
+
+    flex:
+        1;
+
+    background:
+        var(--brown);
+
+    color:
+        white;
+
+    border:
+        2px solid var(--brown);
+
+    box-shadow:
+        3px 4px 0
+        rgba(
+            112,
+            72,
+            60,
+            0.20
+        );
+
+}
+
+
+#submitButton:hover {
+
+    background:
+        var(--sage-dark);
+
+    border-color:
+        var(--sage-dark);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        3px 6px 0
+        rgba(
+            82,
+            109,
+            90,
+            0.20
+        );
+
+}
+
+
+#submitButton:active {
+
+    transform:
+        translateY(1px);
+
+    box-shadow:
+        1px 2px 0
+        rgba(
+            112,
+            72,
+            60,
+            0.20
+        );
+
+}
+
+
+#cancelButton {
+
+    background:
+        var(--pink-light);
+
+    color:
+        var(--brown);
+
+    border:
+        2px solid var(--brown-pale);
+
+}
+
+
+/* =========================================================
+   16. BUDGET
+========================================================= */
+
+.budget-input label {
+
+    display:
+        block;
+
+    color:
+        var(--brown);
+
+    font-size:
+        11px;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        1px;
+
+    margin-bottom:
+        7px;
+
+}
+
+
+.budget-input-row {
+
+    display:
+        flex;
+
+    gap:
+        10px;
+
+}
+
+
+#budgetAmount {
+
+    flex:
+        1;
+
+    min-height:
+        46px;
+
+    padding:
+        12px;
+
+    background:
+        white;
+
+    border:
+        2px solid var(--brown-pale);
+
+    border-radius:
+        11px;
+
+    font-family:
+        inherit;
+
+}
+
+
+#saveBudgetButton {
+
+    min-width:
+        150px;
+
+    background:
+        var(--sage-dark);
+
+    color:
+        white;
+
+    border:
+        2px solid var(--sage-dark);
+
+    border-radius:
+        11px;
+
+    font-family:
+        inherit;
+
+    font-weight:
+        bold;
+
+    cursor:
+        pointer;
+
+    transition:
+        0.25s ease;
+
+}
+
+
+#saveBudgetButton:hover {
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+.budget-summary {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        12px;
+
+    margin-top:
+        20px;
+
+}
+
+
+.budget-stat {
+
+    position:
+        relative;
+
+    padding:
+        15px;
+
+    background:
+        var(--cream);
+
+    border:
+        2px solid var(--brown-pale);
+
+    border-radius:
+        13px;
+
+}
+
+
+.budget-stat span {
+
+    display:
+        block;
+
+    color:
+        var(--text-soft);
+
+    font-size:
+        11px;
+
+    margin-bottom:
+        5px;
+
+}
+
+
+.budget-stat strong {
+
+    color:
+        var(--brown);
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        17px;
+
+}
+
+
+.budget-progress {
+
+    width:
+        100%;
+
+    height:
+        13px;
+
+    margin-top:
+        20px;
+
+    background:
+        var(--cream-dark);
+
+    border:
+        2px solid var(--brown-pale);
+
+    border-radius:
+        20px;
+
+    overflow:
+        hidden;
+
+}
+
+
+.budget-progress-bar {
+
+    width:
+        0;
+
+    height:
+        100%;
+
+    background:
+        var(--sage);
+
+    border-radius:
+        20px;
+
+    transition:
+        width 0.8s ease;
+
+}
+
+
+.budget-message {
+
+    color:
+        var(--text-soft);
+
+    font-size:
+        12px;
+
+    margin-top:
+        8px;
+
+}
+
+
+/* =========================================================
+   17. ANALYTICS
+========================================================= */
+
+#categoryChart {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        10px;
+
+}
+
+
+.category-item {
+
+    padding:
+        14px;
+
+    background:
+        var(--cream);
+
+    border:
+        2px solid var(--brown-pale);
+
+    border-radius:
+        13px;
+
+    transition:
+        transform 0.2s ease;
+
+}
+
+
+.category-item:hover {
+
+    transform:
+        translateX(4px);
+
+}
+
+
+.category-info {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        9px;
+
+}
+
+
+.category-icon {
+
+    width:
+        36px;
+
+    height:
+        36px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        var(--paper);
+
+    border:
+        2px solid var(--brown-pale);
+
+    border-radius:
+        10px;
+
+}
+
+
+.category-name {
+
+    color:
+        var(--brown);
+
+    font-weight:
+        bold;
+
+    font-size:
+        13px;
+
+}
+
+
+.category-amount {
+
+    color:
+        var(--brown-light);
+
+    font-size:
+        13px;
+
+    font-weight:
+        bold;
+
+}
+
+
+.category-bar-container {
+
+    width:
+        100%;
+
+    height:
+        9px;
+
+    margin-top:
+        10px;
+
+    background:
+        var(--cream-dark);
+
+    border-radius:
+        20px;
+
+    overflow:
+        hidden;
+
+}
+
+
+.category-bar {
+
+    height:
+        100%;
+
+    background:
+        var(--pink);
+
+    border-radius:
+        20px;
+
+    transition:
+        width 0.8s ease;
+
+}
+
+
+/* =========================================================
+   18. INSIGHTS
+========================================================= */
+
+#spendingInsights {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        10px;
+
+}
+
+
+.insight-item {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    gap:
+        12px;
+
+    padding:
+        15px;
+
+    background:
+        var(--cream);
+
+    border:
+        2px solid var(--brown-pale);
+
+    border-radius:
+        13px;
+
+}
+
+
+.insight-icon {
+
+    width:
+        38px;
+
+    height:
+        38px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-shrink:
+        0;
+
+    background:
+        var(--pink-light);
+
+    border:
+        2px solid var(--brown-pale);
+
+    border-radius:
+        10px;
+
+}
+
+
+.insight-item strong {
+
+    color:
+        var(--brown);
+
+    font-size:
+        14px;
+
+}
+
+
+.insight-item p {
+
+    color:
+        var(--text-soft);
+
+    font-size:
+        12px;
+
+    margin-top:
+        3px;
+
+}
+
+
+/* =========================================================
+   19. COMPARISON
+========================================================= */
+
+#monthlyComparison {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        10px;
+
+}
+
+
+.comparison-item {
+
+    padding:
+        15px;
+
+    background:
+        var(--cream);
+
+    border:
+        2px solid var(--brown-pale);
+
+    border-radius:
+        13px;
+
+}
+
+
+/* =========================================================
+   20. LEDGER CONTROLS
+========================================================= */
+
+.transaction-controls {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr 1fr;
+
+    gap:
+        9px;
+
+    margin-bottom:
+        18px;
+
+}
+
+
+.search-wrapper {
+
+    position:
+        relative;
+
+}
+
+
+.search-icon {
+
+    position:
+        absolute;
+
+    left:
+        12px;
+
+    top:
+        50%;
+
+    transform:
+        translateY(-50%);
+
+}
+
+
+.search-wrapper input,
+.transaction-controls select {
+
+    width:
+        100%;
+
+    min-height:
+        43px;
+
+    padding:
+        10px;
+
+    background:
+        var(--cream);
+
+    color:
+        var(--text);
+
+    border:
+        2px solid var(--brown-pale);
+
+    border-radius:
+        10px;
+
+    font-family:
+        inherit;
+
+    font-size:
+        12px;
+
+}
+
+
+.search-wrapper input {
+
+    padding-left:
+        33px;
+
+}
+
+
+.search-wrapper input:focus,
+.transaction-controls select:focus {
+
+    outline:
+        none;
+
+    border-color:
+        var(--sage);
+
+}
+
+
+/* =========================================================
+   21. TRANSACTION LIST
+========================================================= */
+
+#transactionList {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        10px;
+
+}
+
+
+.transaction-item {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        15px;
+
+    padding:
+        14px;
+
+    background:
+        var(--cream);
+
+    border:
+        2px solid var(--brown-pale);
+
+    border-radius:
+        13px;
+
+    transition:
+        all 0.25s ease;
+
+}
+
+
+.transaction-item:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        3px 5px 0
+        rgba(
+            112,
+            72,
+            60,
+            0.10
+        );
+
+}
+
+
+.transaction-info {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        11px;
+
+    min-width:
+        0;
+
+}
+
+
+.transaction-icon {
+
+    width:
+        43px;
+
+    height:
+        43px;
+
+    min-width:
+        43px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        var(--paper);
+
+    border:
+        2px solid var(--brown-pale);
+
+    border-radius:
+        11px;
+
+    font-size:
+        20px;
+
+}
+
+
+.transaction-info strong {
+
+    display:
+        block;
+
+    color:
+        var(--brown);
+
+    font-size:
+        14px;
+
+}
+
+
+.transaction-info p {
+
+    color:
+        var(--text-soft);
+
+    font-size:
+        11px;
+
+}
+
+
+.transaction-right {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+}
+
+
+.income-amount {
+
+    color:
+        var(--green);
+
+}
+
+
+.expense-amount {
+
+    color:
+        var(--red);
+
+}
+
+
+.transaction-actions {
+
+    display:
+        flex;
+
+    gap:
+        5px;
+
+}
+
+
+.edit-button,
+.delete-button {
+
+    min-width:
+        34px;
+
+    min-height:
+        32px;
+
+    padding:
+        5px;
+
+    border:
+        2px solid var(--brown-pale);
+
+    border-radius:
+        8px;
+
+    cursor:
+        pointer;
+
+    transition:
+        0.2s ease;
+
+}
+
+
+.edit-button {
+
+    background:
+        var(--cream);
+
+}
+
+
+.delete-button {
+
+    background:
+        var(--red-light);
+
+}
+
+
+.edit-button:hover,
+.delete-button:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =========================================================
+   22. EMPTY STATE
+========================================================= */
+
+.empty-message {
+
+    padding:
+        30px 20px;
+
+    text-align:
+        center;
+
+    color:
+        var(--text-soft);
+
+    background:
+        var(--cream);
+
+    border:
+        2px dashed var(--brown-pale);
+
+    border-radius:
+        15px;
+
+}
+
+
+/* =========================================================
+   23. DATA MANAGEMENT
+========================================================= */
+
+.data-buttons {
+
+    display:
+        flex;
+
+    gap:
+        10px;
+
+    flex-wrap:
+        wrap;
+
+}
+
+
+.data-buttons button {
+
+    padding:
+        10px 15px;
+
+    background:
+        var(--cream);
+
+    color:
+        var(--brown);
+
+    border:
+        2px solid var(--brown-pale);
+
+    border-radius:
+        10px;
+
+    font-family:
+        inherit;
+
+    font-weight:
+        bold;
+
+    cursor:
+        pointer;
+
+    transition:
+        0.2s ease;
+
+}
+
+
+.data-buttons button:hover {
+
+    transform:
+        translateY(-2px);
+
+    background:
+        var(--paper);
+
+}
+
+
+.data-note {
+
+    color:
+        var(--text-soft);
+
+    font-size:
+        11px;
+
+    margin-top:
+        10px;
+
+}
+
+
+/* =========================================================
+   24. FOOTER
+========================================================= */
+
+.app-footer {
+
+    padding:
+        20px;
+
+    text-align:
+        center;
+
+    color:
+        var(--brown-light);
+
+    font-size:
+        12px;
+
+}
+
+
+/* =========================================================
+   25. NOTIFICATIONS
+========================================================= */
+
+.notification-container {
+
+    position:
+        fixed;
+
+    top:
+        20px;
+
+    right:
+        20px;
+
+    z-index:
+        1000;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        10px;
+
+}
+
+
+.notification {
+
+    max-width:
+        350px;
+
+    padding:
+        13px 17px;
+
+    background:
+        var(--brown);
+
+    color:
+        white;
+
+    border:
+        2px solid var(--brown-light);
+
+    border-radius:
+        12px;
+
+    box-shadow:
+        4px 5px 0
+        rgba(
+            112,
+            72,
+            60,
+            0.15
+        );
+
+}
+
+
+/* =========================================================
+   26. MODAL
+========================================================= */
+
+.confirmation-modal {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        2000;
+
+    display:
+        none;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        20px;
+
+    background:
+        rgba(
+            112,
+            72,
+            60,
+            0.40
+        );
+
+    backdrop-filter:
+        blur(4px);
+
+}
+
+
+.confirmation-modal.show {
+
+    display:
+        flex;
+
+}
+
+
+.confirmation-box {
+
+    width:
+        min(
+            100%,
+            420px
+        );
+
+    padding:
+        25px;
+
+    text-align:
+        center;
+
+    background:
+        var(--paper);
+
+    border:
+        2px solid var(--brown-pale);
+
+    border-radius:
+        18px;
+
+    box-shadow:
+        5px 7px 0
+        rgba(
+            112,
+            72,
+            60,
+            0.18
+        );
+
+}
+
+
+.confirmation-icon {
+
+    font-size:
+        34px;
+
+    margin-bottom:
+        8px;
+
+}
+
+
+.confirmation-box h2 {
+
+    color:
+        var(--brown);
+
+    font-family:
+        Georgia,
+        serif;
+
+}
+
+
+.confirmation-box p {
+
+    color:
+        var(--text-soft);
+
+    font-size:
+        13px;
+
+    margin:
+        8px 0 20px;
+
+}
+
+
+.confirmation-buttons {
+
+    display:
+        flex;
+
+    gap:
+        10px;
+
+}
+
+
+.confirmation-buttons button {
+
+    flex:
+        1;
+
+    min-height:
+        43px;
+
+    border:
+        none;
+
+    border-radius:
+        10px;
+
+    font-family:
+        inherit;
+
+    font-weight:
+        bold;
+
+    cursor:
+        pointer;
+
+}
+
+
+#modalCancelButton {
+
+    background:
+        var(--cream-dark);
+
+    color:
+        var(--brown);
+
+}
+
+
+#modalConfirmButton {
+
+    background:
+        var(--red);
+
+    color:
+        white;
+
+}
+
+
+/* =========================================================
+   27. TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .app {
+
+        width:
+            min(
+                calc(100% - 22px),
+                750px
+            );
+
+    }
+
+
+    .transaction-controls {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .search-wrapper {
+
+        grid-column:
+            1 / -1;
+
+    }
+
+
+    .app-header::before {
+
+        left:
+            5%;
+
+    }
+
+
+    .app-header::after {
+
+        right:
+            5%;
+
+    }
+
+}
+
+
+/* =========================================================
+   28. MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .app {
+
+        width:
+            calc(100% - 14px);
+
+        padding:
+            20px 0 35px;
+
+    }
+
+
+    section {
+
+        padding:
+            18px;
+
+        border-radius:
+            16px;
+
+        margin-bottom:
+            15px;
+
+    }
+
+
+    /* HEADER */
+
+    .app-header {
+
+        padding:
+            10px 0 20px;
+
+    }
+
+
+    .app-header::before,
+    .app-header::after {
+
+        display:
+            none;
+
+    }
+
+
+    .logo-icon {
+
+        width:
+            45px;
+
+        height:
+            45px;
+
+        font-size:
+            23px;
+
+    }
+
+
+    .logo h1 {
+
+        font-size:
+            24px;
+
+    }
+
+
+    .logo p {
+
+        font-size:
+            11px;
+
+    }
+
+
+    /* SUMMARY */
+
+    .summary {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            10px;
+
+    }
+
+
+    .card {
+
+        min-height:
+            auto;
+
+        padding:
+            17px;
+
+    }
+
+
+    .card p {
+
+        font-size:
+            23px;
+
+    }
+
+
+    /* MONTH */
+
+    .month-selector {
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+    }
+
+
+    #monthFilter {
+
+        width:
+            100%;
+
+    }
+
+
+    /* FORM */
+
+    .form-row {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .transaction-type-toggle {
+
+        gap:
+            7px;
+
+    }
+
+
+    .type-button {
+
+        font-size:
+            13px;
+
+    }
+
+
+    .form-buttons {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    /* BUDGET */
+
+    .budget-input-row {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    #saveBudgetButton {
+
+        width:
+            100%;
+
+        min-height:
+            45px;
+
+    }
+
+
+    .budget-summary {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    /* ANALYTICS */
+
+    .category-item {
+
+        padding:
+            12px;
+
+    }
+
+
+    /* FILTERS */
+
+    .transaction-controls {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .search-wrapper {
+
+        grid-column:
+            auto;
+
+    }
+
+
+    /* TRANSACTIONS */
+
+    .transaction-item {
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+    }
+
+
+    .transaction-right {
+
+        width:
+            100%;
+
+        justify-content:
+            space-between;
+
+    }
+
+
+    /* DATA */
+
+    .data-buttons {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .data-buttons button {
+
+        width:
+            100%;
+
+    }
+
+
+    /* NOTIFICATION */
+
+    .notification-container {
+
+        left:
+            10px;
+
+        right:
+            10px;
+
+        top:
+            10px;
+
+    }
+
+
+    .notification {
+
+        max-width:
+            none;
+
+    }
+
+
+    /* MODAL */
+
+    .confirmation-buttons {
+
+        flex-direction:
+            column;
+
+    }
+
+}
+/* =========================================================
+   STEP 2 — ANIMATIONS
+========================================================= */
+
+
+/* =========================================================
+   1. PAGE ENTRANCE
+========================================================= */
+
+.app {
+
+    animation:
+        pageEnter 0.7s ease both;
+
+}
+
+
+@keyframes pageEnter {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(18px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   2. HEADER ANIMATION
+========================================================= */
+
+.app-header {
+
+    animation:
+        headerEnter 0.8s ease 0.1s both;
+
+}
+
+
+@keyframes headerEnter {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(-12px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   3. SECTION ENTRANCE
+========================================================= */
+
+section {
+
+    animation:
+        sectionEnter 0.6s ease both;
+
+}
+
+
+@keyframes sectionEnter {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(15px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* Give different sections slightly different timing */
+
+.summary {
+
+    animation-delay:
+        0.15s;
+
+}
+
+
+.transaction-form {
+
+    animation-delay:
+        0.25s;
+
+}
+
+
+.budget-section {
+
+    animation-delay:
+        0.35s;
+
+}
+
+
+.analytics-section {
+
+    animation-delay:
+        0.45s;
+
+}
+
+
+.ledger-section {
+
+    animation-delay:
+        0.55s;
+
+}
+
+
+/* =========================================================
+   4. SUMMARY CARD ENTRANCE
+========================================================= */
+
+.card {
+
+    animation:
+        cardPop 0.5s ease both;
+
+}
+
+
+.card:nth-child(1) {
+
+    animation-delay:
+        0.2s;
+
+}
+
+
+.card:nth-child(2) {
+
+    animation-delay:
+        0.3s;
+
+}
+
+
+.card:nth-child(3) {
+
+    animation-delay:
+        0.4s;
+
+}
+
+
+@keyframes cardPop {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(12px)
+            scale(0.97);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   5. SPENT / RECEIVED BUTTON
+========================================================= */
+
+.type-button {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+}
+
+
+.type-button::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        0;
+
+    height:
+        0;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.25
+        );
+
+    border-radius:
+        50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    transition:
+        width 0.35s ease,
+        height 0.35s ease;
+
+}
+
+
+.type-button:active::after {
+
+    width:
+        180px;
+
+    height:
+        180px;
+
+}
+
+
+.type-button.active {
+
+    animation:
+        typeSelected 0.25s ease;
+
+}
+
+
+@keyframes typeSelected {
+
+    0% {
+
+        transform:
+            scale(0.97);
+
+    }
+
+    60% {
+
+        transform:
+            scale(1.03);
+
+    }
+
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   6. INPUT FOCUS
+========================================================= */
+
+.form-group input:focus,
+.form-group select:focus {
+
+    animation:
+        inputFocus 0.25s ease;
+
+}
+
+
+@keyframes inputFocus {
+
+    0% {
+
+        transform:
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.01);
+
+    }
+
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   7. SUBMIT BUTTON
+========================================================= */
+
+#submitButton {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+}
+
+
+#submitButton::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        -100%;
+
+    width:
+        60%;
+
+    height:
+        100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(
+                255,
+                255,
+                255,
+                0.18
+            ),
+            transparent
+        );
+
+    transform:
+        skewX(-20deg);
+
+}
+
+
+#submitButton:hover::before {
+
+    animation:
+        buttonShine 0.8s ease;
+
+}
+
+
+@keyframes buttonShine {
+
+    from {
+
+        left:
+            -100%;
+
+    }
+
+    to {
+
+        left:
+            140%;
+
+    }
+
+}
+
+
+/* =========================================================
+   8. BUDGET BAR
+========================================================= */
+
+.budget-progress-bar {
+
+    animation:
+        budgetGrow 1.1s ease both;
+
+    transform-origin:
+        left center;
+
+}
+
+
+@keyframes budgetGrow {
+
+    from {
+
+        width:
+            0 !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   9. ANALYTICS BARS
+========================================================= */
+
+.category-bar {
+
+    animation:
+        chartGrow 0.9s ease both;
+
+    transform-origin:
+        left center;
+
+}
+
+
+@keyframes chartGrow {
+
+    from {
+
+        transform:
+            scaleX(0);
+
+    }
+
+    to {
+
+        transform:
+            scaleX(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   10. TRANSACTION ENTRANCE
+========================================================= */
+
+.transaction-item {
+
+    animation:
+        transactionEnter 0.4s ease both;
+
+}
+
+
+@keyframes transactionEnter {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateX(-12px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   11. TRANSACTION HOVER
+========================================================= */
+
+.transaction-item:hover .transaction-icon {
+
+    animation:
+        iconBounce 0.4s ease;
+
+}
+
+
+@keyframes iconBounce {
+
+    0%,
+    100% {
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            rotate(-8deg)
+            scale(1.08);
+
+    }
+
+}
+
+
+/* =========================================================
+   12. EDIT / DELETE BUTTON
+========================================================= */
+
+.edit-button:hover,
+.delete-button:hover {
+
+    animation:
+        actionBounce 0.25s ease;
+
+}
+
+
+@keyframes actionBounce {
+
+    50% {
+
+        transform:
+            translateY(-3px)
+            rotate(-3deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   13. EMPTY MESSAGE
+========================================================= */
+
+.empty-message {
+
+    animation:
+        emptyAppear 0.5s ease both;
+
+}
+
+
+@keyframes emptyAppear {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            scale(0.97);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   14. INSIGHT CARDS
+========================================================= */
+
+.insight-item {
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.insight-item:hover {
+
+    transform:
+        translateX(4px);
+
+    box-shadow:
+        3px 4px 0
+        rgba(
+            112,
+            72,
+            60,
+            0.08
+        );
+
+}
+
+
+.insight-item:hover .insight-icon {
+
+    animation:
+        insightBounce 0.45s ease;
+
+}
+
+
+@keyframes insightBounce {
+
+    0%,
+    100% {
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            rotate(8deg)
+            scale(1.08);
+
+    }
+
+}
+
+
+/* =========================================================
+   15. NOTIFICATION
+========================================================= */
+
+.notification {
+
+    animation:
+        notificationEnter
+        0.35s
+        cubic-bezier(
+            0.2,
+            0.8,
+            0.2,
+            1
+        )
+        both;
+
+}
+
+
+@keyframes notificationEnter {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateX(30px)
+            scale(0.95);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateX(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   16. DECORATIVE HEADER ELEMENTS
+========================================================= */
+
+.app-header::before {
+
+    animation:
+        leafFloat 3s ease-in-out infinite;
+
+}
+
+
+@keyframes leafFloat {
+
+    0%,
+    100% {
+
+        transform:
+            rotate(-20deg)
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            rotate(-12deg)
+            translateY(-5px);
+
+    }
+
+}
+
+
+.app-header::after {
+
+    animation:
+        starTwinkle 2s ease-in-out infinite;
+
+}
+
+
+@keyframes starTwinkle {
+
+    0%,
+    100% {
+
+        opacity:
+            0.45;
+
+        transform:
+            scale(1)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+        transform:
+            scale(1.2)
+            rotate(15deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   17. BUTTON PRESS
+========================================================= */
+
+button:active {
+
+    transition:
+        transform 0.08s ease;
+
+}
+
+
+/* =========================================================
+   18. REDUCE MOTION
+   Accessibility
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+
+        scroll-behavior:
+            auto !important;
+
+    }
+
+}
+/* =========================================================
+   STEP 4 — JOURNAL TRANSACTION CARDS
+========================================================= */
+
+
+/* =========================================================
+   1. TRANSACTION CARD
+========================================================= */
+
+.transaction-item {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        var(--paper);
+
+    border:
+        2px solid var(--brown-pale);
+
+    border-radius:
+        15px;
+
+    box-shadow:
+        3px 4px 0
+        rgba(
+            112,
+            72,
+            60,
+            0.08
+        );
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+
+}
+
+
+/* Little decorative line */
+
+.transaction-item::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        0;
+
+    width:
+        5px;
+
+    height:
+        100%;
+
+    background:
+        var(--sage);
+
+    border-radius:
+        10px 0 0 10px;
+
+}
+
+
+/* Decorative flower */
+
+.transaction-item::after {
+
+    content:
+        "✿";
+
+    position:
+        absolute;
+
+    right:
+        10px;
+
+    top:
+        5px;
+
+    color:
+        var(--pink);
+
+    opacity:
+        0.25;
+
+    font-size:
+        18px;
+
+    pointer-events:
+        none;
+
+}
+
+
+.transaction-item:hover {
+
+    transform:
+        translateX(4px);
+
+    box-shadow:
+        5px 6px 0
+        rgba(
+            112,
+            72,
+            60,
+            0.10
+        );
+
+}
+
+
+/* =========================================================
+   2. TRANSACTION ICON
+========================================================= */
+
+.transaction-icon {
+
+    position:
+        relative;
+
+    background:
+        var(--cream);
+
+    border:
+        2px solid var(--brown-pale);
+
+    border-radius:
+        12px;
+
+    box-shadow:
+        2px 3px 0
+        rgba(
+            112,
+            72,
+            60,
+            0.08
+        );
+
+    transition:
+        transform 0.25s ease;
+
+}
+
+
+.transaction-item:hover
+.transaction-icon {
+
+    transform:
+        rotate(-5deg)
+        scale(1.06);
+
+}
+
+
+/* =========================================================
+   3. TRANSACTION DESCRIPTION
+========================================================= */
+
+.transaction-info strong {
+
+    color:
+        var(--brown);
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        14px;
+
+}
+
+
+.transaction-info p {
+
+    color:
+        var(--text-soft);
+
+    font-size:
+        11px;
+
+}
+
+
+/* =========================================================
+   4. AMOUNT
+========================================================= */
+
+.income-amount,
+.expense-amount {
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        15px;
+
+}
+
+
+.income-amount {
+
+    color:
+        var(--green);
+
+}
+
+
+.expense-amount {
+
+    color:
+        var(--red);
+
+}
+
+
+/* =========================================================
+   5. EDIT BUTTON
+========================================================= */
+
+.edit-button {
+
+    background:
+        var(--cream);
+
+    color:
+        var(--brown);
+
+    border:
+        2px solid var(--brown-pale);
+
+}
+
+
+.edit-button:hover {
+
+    background:
+        var(--cream-dark);
+
+    color:
+        var(--sage-dark);
+
+}
+
+
+/* =========================================================
+   6. DELETE BUTTON
+========================================================= */
+
+.delete-button {
+
+    background:
+        var(--red-light);
+
+    color:
+        var(--red);
+
+    border:
+        2px solid #E4B8B1;
+
+}
+
+
+.delete-button:hover {
+
+    background:
+        #F3C9C3;
+
+    color:
+        #9F4942;
+
+}
+
+
+/* =========================================================
+   7. TRANSACTION ACTIONS
+========================================================= */
+
+.transaction-actions {
+
+    opacity:
+        0.75;
+
+    transition:
+        opacity 0.2s ease;
+
+}
+
+
+.transaction-item:hover
+.transaction-actions {
+
+    opacity:
+        1;
+
+}
+
+
+/* =========================================================
+   8. EDITING MODE
+========================================================= */
+
+.transaction-form.editing-mode {
+
+    border-color:
+        var(--sage);
+
+    box-shadow:
+        5px 6px 0
+        rgba(
+            82,
+            109,
+            90,
+            0.18
+        );
+
+    animation:
+        editingPulse 0.5s ease;
+
+}
+
+
+@keyframes editingPulse {
+
+    0% {
+
+        transform:
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.012);
+
+    }
+
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   9. EMPTY LEDGER
+========================================================= */
+
+.empty-message {
+
+    position:
+        relative;
+
+    min-height:
+        150px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        7px;
+
+    padding:
+        30px;
+
+    background:
+        var(--cream);
+
+    border:
+        2px dashed var(--brown-pale);
+
+    border-radius:
+        16px;
+
+    color:
+        var(--text-soft);
+
+    overflow:
+        hidden;
+
+}
+
+
+.empty-message::before {
+
+    content:
+        "📖";
+
+    font-size:
+        32px;
+
+    animation:
+        littleFloat 2.5s ease-in-out infinite;
+
+}
+
+
+.empty-message::after {
+
+    content:
+        "🌿";
+
+    position:
+        absolute;
+
+    right:
+        20px;
+
+    bottom:
+        12px;
+
+    opacity:
+        0.35;
+
+    font-size:
+        24px;
+
+}
+
+
+@keyframes littleFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-5px);
+
+    }
+
+}
+
+
+/* =========================================================
+   10. TRANSACTION STAGGER
+========================================================= */
+
+.transaction-item:nth-child(1) {
+
+    animation-delay:
+        0.05s;
+
+}
+
+
+.transaction-item:nth-child(2) {
+
+    animation-delay:
+        0.10s;
+
+}
+
+
+.transaction-item:nth-child(3) {
+
+    animation-delay:
+        0.15s;
+
+}
+
+
+.transaction-item:nth-child(4) {
+
+    animation-delay:
+        0.20s;
+
+}
+
+
+.transaction-item:nth-child(5) {
+
+    animation-delay:
+        0.25s;
+
+}
+
+
+.transaction-item:nth-child(6) {
+
+    animation-delay:
+        0.30s;
+
+}
+
+
+.transaction-item:nth-child(7) {
+
+    animation-delay:
+        0.35s;
+
+}
+
+
+.transaction-item:nth-child(8) {
+
+    animation-delay:
+        0.40s;
+
+}
+
+
+/* =========================================================
+   11. MOBILE TRANSACTIONS
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .transaction-item {
+
+        padding:
+            14px 12px 14px 15px;
+
+    }
+
+
+    .transaction-item::before {
+
+        width:
+            4px;
+
+    }
+
+
+    .transaction-info {
+
+        padding-left:
+            2px;
+
+    }
+
+
+    .transaction-icon {
+
+        width:
+            40px;
+
+        height:
+            40px;
+
+        min-width:
+            40px;
+
+        font-size:
+            18px;
+
+    }
+
+
+    .transaction-info strong {
+
+        font-size:
+            13px;
+
+    }
+
+
+    .transaction-info p {
+
+        font-size:
+            10px;
+
+    }
+
+
+    .transaction-right {
+
+        padding-left:
+            52px;
+
+    }
+
+
+    .transaction-actions {
+
+        gap:
+            5px;
+
+    }
+
+}
+/* =========================================================
+   STEP 6 — ILLUSTRATED JOURNAL DECORATIONS
+========================================================= */
+
+
+/* =========================================================
+   1. MAIN APP DECORATIVE ATMOSPHERE
+========================================================= */
+
+.app {
+    position: relative;
+}
+
+
+/* Small decorative doodles around the page */
+
+.app::before {
+
+    content: "✦";
+
+    position: fixed;
+
+    top: 18%;
+
+    left: 4%;
+
+    color: var(--gold);
+
+    font-size: 22px;
+
+    opacity: 0.45;
+
+    pointer-events: none;
+
+    animation:
+        doodleFloat 4s ease-in-out infinite;
+
+}
+
+
+.app::after {
+
+    content: "🌿";
+
+    position: fixed;
+
+    bottom: 14%;
+
+    right: 4%;
+
+    font-size: 25px;
+
+    opacity: 0.35;
+
+    pointer-events: none;
+
+    animation:
+        doodleFloatReverse 5s ease-in-out infinite;
+
+}
+
+
+/* =========================================================
+   2. JOURNAL SECTION DECORATION
+========================================================= */
+
+section:not(.summary) {
+
+    overflow: hidden;
+
+}
+
+
+section:not(.summary)::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 75px;
+
+    height: 75px;
+
+    right: -28px;
+
+    bottom: -28px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(
+            246,
+            197,
+            168,
+            0.18
+        );
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   3. SECTION HEADING FLOWER
+========================================================= */
+
+.section-heading::after {
+
+    content: "✿";
+
+    position: absolute;
+
+    right: 2px;
+
+    top: 0;
+
+    color: var(--pink);
+
+    font-size: 21px;
+
+    opacity: 0.55;
+
+    transform:
+        rotate(-10deg);
+
+}
+
+
+/* =========================================================
+   4. LITTLE JOURNAL LINE
+========================================================= */
+
+.section-heading h2::after {
+
+    content: "";
+
+    display: block;
+
+    width: 45px;
+
+    height: 3px;
+
+    margin-top: 7px;
+
+    background:
+        var(--peach);
+
+    border-radius: 10px;
+
+    transform:
+        rotate(-1deg);
+
+}
+
+
+/* =========================================================
+   5. NEW ENTRY SPECIAL DECORATION
+========================================================= */
+
+.transaction-form .section-heading::before {
+
+    content: "📖";
+
+    position: absolute;
+
+    left: -2px;
+
+    top: -5px;
+
+    font-size: 20px;
+
+    opacity: 0.75;
+
+}
+
+
+/* Give the heading some room */
+
+.transaction-form .section-heading h2 {
+
+    padding-left: 28px;
+
+}
+
+
+/* =========================================================
+   6. BUDGET DECORATION
+========================================================= */
+
+.budget-section {
+
+    background:
+        #FFF7E8;
+
+}
+
+
+.budget-section .section-heading::before {
+
+    content: "🌱";
+
+    position: absolute;
+
+    left: -3px;
+
+    top: -5px;
+
+    font-size: 20px;
+
+}
+
+
+.budget-section .section-heading h2 {
+
+    padding-left: 28px;
+
+}
+
+
+/* =========================================================
+   7. ANALYTICS DECORATION
+========================================================= */
+
+.analytics {
+
+    background:
+        #FFF9ED;
+
+}
+
+
+.analytics .section-heading::before {
+
+    content: "🌸";
+
+    position: absolute;
+
+    left: -3px;
+
+    top: -5px;
+
+    font-size: 20px;
+
+}
+
+
+.analytics .section-heading h2 {
+
+    padding-left: 28px;
+
+}
+
+
+/* =========================================================
+   8. INSIGHTS DECORATION
+========================================================= */
+
+.insights {
+
+    background:
+        #FFF6EE;
+
+}
+
+
+.insights .section-heading::before {
+
+    content: "💭";
+
+    position: absolute;
+
+    left: -3px;
+
+    top: -5px;
+
+    font-size: 19px;
+
+}
+
+
+.insights .section-heading h2 {
+
+    padding-left: 28px;
+
+}
+
+
+/* =========================================================
+   9. COMPARISON DECORATION
+========================================================= */
+
+.comparison {
+
+    background:
+        #FFF8E9;
+
+}
+
+
+.comparison .section-heading::before {
+
+    content: "🌙";
+
+    position: absolute;
+
+    left: -3px;
+
+    top: -5px;
+
+    font-size: 19px;
+
+}
+
+
+.comparison .section-heading h2 {
+
+    padding-left: 28px;
+
+}
+
+
+/* =========================================================
+   10. LEDGER DECORATION
+========================================================= */
+
+.transactions {
+
+    background:
+        #FFF9ED;
+
+}
+
+
+.transactions .section-heading::before {
+
+    content: "📚";
+
+    position: absolute;
+
+    left: -3px;
+
+    top: -5px;
+
+    font-size: 19px;
+
+}
+
+
+.transactions .section-heading h2 {
+
+    padding-left: 28px;
+
+}
+
+
+/* =========================================================
+   11. DATA SECTION
+========================================================= */
+
+.data-management {
+
+    background:
+        #FFF6E8;
+
+}
+
+
+.data-management .section-heading::before {
+
+    content: "📦";
+
+    position: absolute;
+
+    left: -3px;
+
+    top: -5px;
+
+    font-size: 18px;
+
+}
+
+
+.data-management .section-heading h2 {
+
+    padding-left: 28px;
+
+}
+
+
+/* =========================================================
+   12. SUMMARY CARDS — LITTLE DOODLES
+========================================================= */
+
+.balance-card::before {
+
+    content: "🌱";
+
+    position: absolute;
+
+    right: 14px;
+
+    top: 12px;
+
+    font-size: 17px;
+
+    opacity: 0.55;
+
+}
+
+
+.income-card::before {
+
+    content: "🌿";
+
+    position: absolute;
+
+    right: 14px;
+
+    top: 12px;
+
+    font-size: 17px;
+
+    opacity: 0.55;
+
+}
+
+
+.expense-card::before {
+
+    content: "🍂";
+
+    position: absolute;
+
+    right: 14px;
+
+    top: 12px;
+
+    font-size: 17px;
+
+    opacity: 0.55;
+
+}
+
+
+/* =========================================================
+   13. SUMMARY CARD LABELS
+========================================================= */
+
+.balance-card .card-label::before {
+
+    content: "✦ ";
+
+    color: var(--gold);
+
+}
+
+
+.income-card .card-label::before {
+
+    content: "↑ ";
+
+    color: var(--green);
+
+}
+
+
+.expense-card .card-label::before {
+
+    content: "↓ ";
+
+    color: var(--red);
+
+}
+
+
+/* =========================================================
+   14. FORM INPUT PAPER EFFECT
+========================================================= */
+
+.form-group input,
+.form-group select {
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(
+            255,
+            255,
+            255,
+            0.8
+        );
+
+}
+
+
+/* =========================================================
+   15. TYPE BUTTONS
+========================================================= */
+
+.expenseTypeButton,
+.incomeTypeButton {
+
+    position: relative;
+
+}
+
+
+/* Small corner decoration */
+
+.type-button.active::before {
+
+    content: "✦";
+
+    position: absolute;
+
+    right: 9px;
+
+    top: 5px;
+
+    font-size: 10px;
+
+    opacity: 0.8;
+
+    animation:
+        tinySparkle 0.5s ease;
+
+}
+
+
+@keyframes tinySparkle {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(0)
+            rotate(-30deg);
+
+    }
+
+    60% {
+
+        opacity: 1;
+
+        transform:
+            scale(1.2)
+            rotate(10deg);
+
+    }
+
+    100% {
+
+        opacity: 0.8;
+
+        transform:
+            scale(1)
+            rotate(0deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   16. ADD BUTTON — JOURNAL STYLE
+========================================================= */
+
+#submitButton {
+
+    letter-spacing:
+        0.2px;
+
+}
+
+
+#submitButton::after {
+
+    content: " ✦";
+
+    opacity: 0.75;
+
+}
+
+
+/* =========================================================
+   17. BUDGET STATS
+========================================================= */
+
+.budget-stat:nth-child(1) {
+
+    transform:
+        rotate(-0.4deg);
+
+}
+
+
+.budget-stat:nth-child(2) {
+
+    transform:
+        rotate(0.3deg);
+
+}
+
+
+.budget-stat:nth-child(3) {
+
+    transform:
+        rotate(-0.2deg);
+
+}
+
+
+.budget-stat:hover {
+
+    transform:
+        translateY(-3px)
+        rotate(0deg);
+
+    transition:
+        transform 0.25s ease;
+
+}
+
+
+/* =========================================================
+   18. CATEGORY ITEMS
+========================================================= */
+
+.category-item:nth-child(odd) {
+
+    transform:
+        rotate(-0.2deg);
+
+}
+
+
+.category-item:nth-child(even) {
+
+    transform:
+        rotate(0.2deg);
+
+}
+
+
+.category-item:hover {
+
+    transform:
+        translateX(4px)
+        rotate(0deg);
+
+}
+
+
+/* =========================================================
+   19. INSIGHT ITEMS
+========================================================= */
+
+.insight-item:nth-child(odd) {
+
+    transform:
+        rotate(-0.2deg);
+
+}
+
+
+.insight-item:nth-child(even) {
+
+    transform:
+        rotate(0.2deg);
+
+}
+
+
+.insight-item:hover {
+
+    transform:
+        translateX(4px)
+        rotate(0deg);
+
+}
+
+
+/* =========================================================
+   20. LEDGER CARDS
+========================================================= */
+
+.transaction-item:nth-child(odd) {
+
+    transform:
+        rotate(-0.15deg);
+
+}
+
+
+.transaction-item:nth-child(even) {
+
+    transform:
+        rotate(0.15deg);
+
+}
+
+
+.transaction-item:hover {
+
+    transform:
+        translateX(4px)
+        rotate(0deg);
+
+}
+
+
+/* =========================================================
+   21. DATA BUTTONS
+========================================================= */
+
+.data-buttons button:nth-child(1) {
+
+    transform:
+        rotate(-0.4deg);
+
+}
+
+
+.data-buttons button:nth-child(2) {
+
+    transform:
+        rotate(0.4deg);
+
+}
+
+
+.data-buttons button:hover {
+
+    transform:
+        translateY(-3px)
+        rotate(0deg);
+
+}
+
+
+/* =========================================================
+   22. FOOTER DOODLES
+========================================================= */
+
+.app-footer::before {
+
+    content:
+        "✿  ─────  ✦  ─────  🍃";
+
+    display:
+        block;
+
+    margin-bottom:
+        8px;
+
+    color:
+        var(--brown-pale);
+
+    letter-spacing:
+        3px;
+
+}
+
+
+/* =========================================================
+   23. FLOATING DOODLES
+========================================================= */
+
+@keyframes doodleFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px)
+            rotate(8deg);
+
+    }
+
+}
+
+
+@keyframes doodleFloatReverse {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(7px)
+            rotate(-7deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   24. DESKTOP EXTRA DECORATION
+========================================================= */
+
+@media (min-width: 1000px) {
+
+    .app {
+
+        padding-left:
+            20px;
+
+        padding-right:
+            20px;
+
+    }
+
+
+    section {
+
+        position:
+            relative;
+
+    }
+
+
+    /* Decorative little flowers */
+
+    .transaction-form::after {
+
+        content:
+            "🌿  ✿";
+
+        left:
+            18px;
+
+        bottom:
+            13px;
+
+        opacity:
+            0.45;
+
+    }
+
+}
+
+
+/* =========================================================
+   25. MOBILE — SIMPLIFY DECORATIONS
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .app::before,
+    .app::after {
+
+        display:
+            none;
+
+    }
+
+
+    section:not(.summary)::after {
+
+        width:
+            55px;
+
+        height:
+            55px;
+
+        right:
+            -22px;
+
+        bottom:
+            -22px;
+
+    }
+
+
+    .section-heading::after {
+
+        right:
+            0;
+
+        font-size:
+            17px;
+
+    }
+
+
+    .section-heading h2 {
+
+        font-size:
+            19px;
+
+    }
+
+
+    .budget-stat:nth-child(1),
+    .budget-stat:nth-child(2),
+    .budget-stat:nth-child(3) {
+
+        transform:
+            none;
+
+    }
+
+
+    .category-item:nth-child(odd),
+    .category-item:nth-child(even),
+    .insight-item:nth-child(odd),
+    .insight-item:nth-child(even),
+    .transaction-item:nth-child(odd),
+    .transaction-item:nth-child(even) {
+
+        transform:
+            none;
+
+    }
+
+
+    .data-buttons button:nth-child(1),
+    .data-buttons button:nth-child(2) {
+
+        transform:
+            none;
+
+    }
+
+}
+/* =========================================================
+   STEP 7A — FORM UX
+========================================================= */
+
+
+/* =========================================================
+   FORM QUESTIONS
+========================================================= */
+
+.form-question {
+
+    display: block;
+
+    color: var(--brown);
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* =========================================================
+   TRANSACTION TYPE
+========================================================= */
+
+.transaction-type-group {
+
+    margin-bottom: 2px;
+
+}
+
+
+.transaction-type-toggle {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+}
+
+
+/* =========================================================
+   TYPE BUTTONS
+========================================================= */
+
+.type-button {
+
+    min-height: 54px;
+
+    font-size: 14px;
+
+    letter-spacing: 0.3px;
+
+}
+
+
+.type-button.active {
+
+    transform:
+        translateY(-2px)
+        scale(1.01);
+
+}
+
+
+/* =========================================================
+   INPUT HINT
+========================================================= */
+
+.input-hint {
+
+    display: block;
+
+    margin-top: 6px;
+
+    color: var(--text-soft);
+
+    font-size: 10px;
+
+    line-height: 1.4;
+
+}
+
+
+/* =========================================================
+   DESCRIPTION INPUT
+========================================================= */
+
+#description {
+
+    min-height: 50px;
+
+}
+
+
+/* =========================================================
+   AMOUNT
+========================================================= */
+
+.amount-input-wrapper {
+
+    position: relative;
+
+}
+
+
+.amount-input-wrapper
+.currency-symbol {
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 17px;
+
+}
+
+
+#amount {
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+}
+
+
+/* Remove ugly number arrows */
+
+#amount::-webkit-inner-spin-button,
+#amount::-webkit-outer-spin-button {
+
+    opacity: 0.5;
+
+}
+
+
+/* =========================================================
+   DATE INPUT
+========================================================= */
+
+#date {
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   FORM SUCCESS FEEDBACK
+========================================================= */
+
+.transaction-form.form-success {
+
+    animation:
+        formSuccess 0.45s ease;
+
+}
+
+
+@keyframes formSuccess {
+
+    0% {
+
+        transform:
+            scale(1);
+
+    }
+
+    45% {
+
+        transform:
+            scale(1.012);
+
+        box-shadow:
+            5px 7px 0
+            rgba(
+                82,
+                109,
+                90,
+                0.20
+            );
+
+    }
+
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   DISABLED SUBMIT BUTTON
+========================================================= */
+
+#submitButton:disabled {
+
+    opacity: 0.65;
+
+    cursor:
+        wait;
+
+    transform:
+        none;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .form-question {
+
+        font-size: 11px;
+
+    }
+
+
+    .type-button {
+
+        min-height: 52px;
+
+        font-size: 12px;
+
+    }
+
+
+    .input-hint {
+
+        font-size: 9px;
+
+    }
+
+}
+/* =========================================================
+   STEP 7B — VISUAL CATEGORY PICKER
+========================================================= */
+
+
+/* =========================================================
+   CATEGORY GRID
+========================================================= */
+
+.category-picker {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        9px;
+
+}
+
+
+/* =========================================================
+   CATEGORY OPTION
+========================================================= */
+
+.category-option {
+
+    position:
+        relative;
+
+    min-height:
+        76px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        5px;
+
+    padding:
+        8px;
+
+    background:
+        var(--paper);
+
+    color:
+        var(--brown);
+
+    border:
+        2px solid var(--brown-pale);
+
+    border-radius:
+        13px;
+
+    font-family:
+        inherit;
+
+    font-size:
+        10px;
+
+    font-weight:
+        bold;
+
+    cursor:
+        pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+/* =========================================================
+   CATEGORY ICON
+========================================================= */
+
+.category-option-icon {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    width:
+        34px;
+
+    height:
+        34px;
+
+    background:
+        var(--cream);
+
+    border:
+        1px solid var(--brown-pale);
+
+    border-radius:
+        10px;
+
+    font-size:
+        18px;
+
+    transition:
+        transform 0.2s ease;
+
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.category-option:hover {
+
+    transform:
+        translateY(-3px);
+
+    background:
+        var(--cream);
+
+    box-shadow:
+        2px 4px 0
+        rgba(
+            112,
+            72,
+            60,
+            0.10
+        );
+
+}
+
+
+.category-option:hover
+.category-option-icon {
+
+    transform:
+        rotate(-6deg)
+        scale(1.08);
+
+}
+
+
+/* =========================================================
+   SELECTED CATEGORY
+========================================================= */
+
+.category-option.active {
+
+    background:
+        var(--sage-light);
+
+    border-color:
+        var(--sage);
+
+    color:
+        var(--sage-dark);
+
+    box-shadow:
+        3px 4px 0
+        rgba(
+            82,
+            109,
+            90,
+            0.14
+        );
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.category-option.active
+.category-option-icon {
+
+    background:
+        var(--white);
+
+    border-color:
+        var(--sage);
+
+    transform:
+        scale(1.08);
+
+}
+
+
+/* Little check mark */
+
+.category-option.active::after {
+
+    content:
+        "✓";
+
+    position:
+        absolute;
+
+    top:
+        5px;
+
+    right:
+        6px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    width:
+        16px;
+
+    height:
+        16px;
+
+    background:
+        var(--sage-dark);
+
+    color:
+        white;
+
+    border-radius:
+        50%;
+
+    font-size:
+        9px;
+
+    animation:
+        categoryCheck 0.25s ease;
+
+}
+
+
+@keyframes categoryCheck {
+
+    from {
+
+        transform:
+            scale(0);
+
+        opacity:
+            0;
+
+    }
+
+    70% {
+
+        transform:
+            scale(1.2);
+
+    }
+
+    to {
+
+        transform:
+            scale(1);
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .category-picker {
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+        gap:
+            7px;
+
+    }
+
+
+    .category-option {
+
+        min-height:
+            68px;
+
+        font-size:
+            9px;
+
+        border-radius:
+            11px;
+
+    }
+
+
+    .category-option-icon {
+
+        width:
+            30px;
+
+        height:
+            30px;
+
+        font-size:
+            16px;
+
+    }
+
+}
+
+
+@media (max-width: 380px) {
+
+    .category-picker {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .category-option {
+
+        min-height:
+            65px;
+
+    }
+
+}
+
+/* =========================================================
+   BUG FIX — REMOVE LONE FLOATING LEAF
+   The rest of the journal decorations remain unchanged.
+========================================================= */
+
+.app::after {
+    content: none !important;
+}
+
+/* =========================================================
+   UI REDESIGN — HEADER / MASCOT
+   Reference-inspired pastel journal look.
+   Existing functionality and selectors remain untouched.
+========================================================= */
+
+.app-header {
+    min-height: 245px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    isolation: isolate;
+    margin-bottom: 22px;
+    padding: 35px 240px 35px 120px;
+    border: 2px solid var(--brown-pale);
+    border-radius: 28px;
+    background:
+        radial-gradient(circle at 82% 18%, rgba(255,255,255,.65) 0 5px, transparent 6px),
+        radial-gradient(circle at 20% 78%, rgba(255,255,255,.55) 0 4px, transparent 5px),
+        linear-gradient(135deg, #FFF8E9 0%, #FFF1DE 58%, #FCE1D1 100%);
+    box-shadow:
+        0 10px 0 rgba(112,72,60,.08),
+        0 18px 35px rgba(112,72,60,.10);
+}
+
+.app-header::before {
+    content: "🌸";
+    left: 24px;
+    top: auto;
+    bottom: 20px;
+    font-size: 40px;
+    transform: rotate(-8deg);
+    opacity: .85;
+    z-index: -1;
+}
+
+.app-header::after {
+    content: "✿";
+    right: 220px;
+    top: 28px;
+    color: var(--pink);
+    font-size: 25px;
+    z-index: -1;
+}
+
+.app-header .logo {
+    position: relative;
+    z-index: 2;
+    max-width: 620px;
+}
+
+.logo-icon {
+    width: 66px;
+    height: 66px;
+    flex: 0 0 66px;
+    border: 2px solid var(--brown-pale);
+    background: #FFE4A8;
+    box-shadow: 0 5px 0 rgba(112,72,60,.12);
+    font-size: 34px;
+    animation: tinyWiggle 4s ease-in-out infinite;
+}
+
+.logo-copy {
+    text-align: left;
+}
+
+.logo h1 {
+    font-size: clamp(34px, 4.2vw, 52px);
+    letter-spacing: -1.5px;
+    text-shadow: 2px 3px 0 rgba(112,72,60,.08);
+}
+
+.logo p {
+    display: inline-block;
+    position: relative;
+    margin-top: 10px;
+    padding-bottom: 7px;
+    font-size: 16px;
+}
+
+.logo p::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 18%;
+    bottom: 0;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--pink);
+    transform: rotate(-1deg);
+    opacity: .7;
+}
+
+.header-mascot {
+    position: absolute;
+    z-index: 3;
+    right: 22px;
+    bottom: -42px;
+    width: 245px;
+    height: auto;
+    object-fit: contain;
+    transform-origin: 50% 90%;
+    filter: drop-shadow(0 8px 5px rgba(112,72,60,.12));
+    animation: mascotFloat 3.8s ease-in-out infinite;
+    pointer-events: none;
+    user-select: none;
+}
+
+.header-decor {
+    position: absolute;
+    pointer-events: none;
+}
+
+.header-decor-left {
+    left: 30%;
+    top: 22px;
+    color: var(--gold);
+    font-size: 26px;
+    animation: sparklePulse 2.4s ease-in-out infinite;
+}
+
+.header-decor-right {
+    right: 31%;
+    bottom: 28px;
+    font-size: 25px;
+    animation: tinyWiggle 3.5s ease-in-out infinite;
+}
+
+@keyframes mascotFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(1.2deg);
+    }
+}
+
+@keyframes tinyWiggle {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(2deg);
+    }
+}
+
+@keyframes sparklePulse {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+        opacity: .65;
+    }
+    50% {
+        transform: scale(1.18) rotate(8deg);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 760px) {
+    .app-header {
+        min-height: 205px;
+        padding: 30px 130px 30px 28px;
+    }
+
+    .logo-icon {
+        width: 52px;
+        height: 52px;
+        flex-basis: 52px;
+        font-size: 27px;
+    }
+
+    .logo h1 {
+        font-size: 32px;
+    }
+
+    .logo p {
+        font-size: 13px;
+    }
+
+    .header-mascot {
+        width: 155px;
+        right: -3px;
+        bottom: -24px;
+    }
+
+    .header-decor-right {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .header-mascot,
+    .logo-icon,
+    .header-decor-left,
+    .header-decor-right {
+        animation: none;
+    }
+}
